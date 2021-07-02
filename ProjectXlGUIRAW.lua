@@ -14,6 +14,13 @@ local set = {
     abs = {E=false,R=false,C=false,F=false,X=false}
 }
 
+--// Declaration Settings
+local arrows = {"Requiem Arrow","Lucky Arrow"}
+local target_races = {'Human (Hybrid)', 'Saiyan', 'Frieza Race', 'Uzumaki Clan', 'Fanalis', 'Jiren', 'Goblin', 'Namekian', 'Majin'}
+local mentors = {'White Beard','Ace','Enel','Dabi'}
+local spec = {'Haoshoku Haki','Kenbunshoku Haki','Hirenyaku','Danger Sense v2','Danger Sense v1','Doa Doa no mi v1'}
+
+
 --// Imports
 local imgui = loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/1e17/UI-Libs/main/imgui_.lua'))()
 
@@ -32,14 +39,8 @@ local combatRemote = game.ReplicatedStorage.RemoteEvents.BladeCombatRemote -- :F
 local clear = game.ReplicatedStorage.RemoteEvents.ClearInventoryRemote -- :FireServer()
 local buy = game.ReplicatedStorage.RemoteEvents.BuyItemRemote -- :FireServer()
 local use = game.ReplicatedStorage.RemoteEvents.ItemRemote -- FireServer()
---//Arrow Declarations
 local itemA = 'Arrow'
-local arrows = {"Requiem Arrow","Lucky Arrow"}
---//Mentor Declarations
 local itemM = 'Random Mentor'
-local mentors = {'White Beard','Ace','Enel','Dabi'}
---//Race Declarations
-local target_races = {'Human (Hybrid)', 'Saiyan', 'Frieza Race', 'Uzumaki Clan', 'Fanalis', 'Jiren', 'Goblin', 'Namekian', 'Majin'}
 local race = player.PlayerValues.Race
 
 --// Old Data 
@@ -191,6 +192,9 @@ coroutine.wrap(function()
                     set.itemenabled = false 
                 end 
             end
+            --if o == "" then
+                    
+            --end
         end
     end
 end)()
@@ -238,7 +242,7 @@ for _,v in pairs(bosses) do
     questDropdown:Add(v)
 end 
 local itemDropdown = buyFolder.AddDropdown(nil,'ChooseAnItem',function(val) set.itemselected = val end)
-for i,v in pairs({'Arrow','Mentor','Armor','Race'}) do 
+for i,v in pairs({'Arrow','Mentor','Armor','Race','Specialization'}) do 
     itemDropdown:Add(v)
 end 
 farmSetFolder.AddSlider(nil,'Distance',function(val) set.distance = val end,{min=0,max=10,def=set.distance,readonly=false})
