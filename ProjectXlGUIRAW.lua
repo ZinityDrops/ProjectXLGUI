@@ -170,7 +170,7 @@ coroutine.wrap(function()
                         until v:FindFirstChild('Level', true) and v:FindFirstChild('Enchantment', true)
                             
                         if v.BagPart.Overhead.Level.Text:find(tostring(Wanted.Level)) and table.find(Wanted.Enchantments, v.BagPart.Overhead.Enchantment.Text) then
-                            
+                            set.itemenabled = false
                         else
                             v.Parent = LocalPlayer.Character
                             v:Destroy()
