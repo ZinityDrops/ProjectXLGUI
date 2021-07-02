@@ -114,7 +114,7 @@ coroutine.wrap(function()
     while wait(nil) do 
         if set.itemenabled then
             local o = set.itemselected
-            
+            print(o)
             if o == "Arrow" then 
                 if #player.Backpack:GetChildren() >= 20 then 
                     for i,v in pairs(player.Backpack:GetChildren()) do
