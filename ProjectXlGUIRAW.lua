@@ -125,7 +125,7 @@ coroutine.wrap(function()
                         end 
                     end
                 else 
-                    buy:FireServer(item)
+                    buy:FireServer(itemA)
                 end 
             end
                 
