@@ -281,7 +281,8 @@ end)()
 
 --//Buy Tab
 local buyitem = buyFolder.AddSwitch(nil,'Start',false,function(bool) set.itemenabled = bool end)
-buyFolder.AddLabel(nil,'May remove all items in inventory, proceed with caution')
+buyFolder.AddLabel(nil,'May remove all items in inventory,')
+buyFolder.AddLabel(nil,'proceed with caution.')
 buyFolder.AddLabel(nil,'Some stuff may not work as well')
 
 --// Credits Tab 
